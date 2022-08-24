@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const dbConnection = require('./db/connect');
 const cors = require("cors");
 const bodyParser = require('body-parser')
+const passport = require('passport');
+const users = require('./routes/users')
 
 
 
@@ -11,6 +13,10 @@ dbConnection()
 
 //APP config 
 const app = express();
+
+
+
+
 const PORT = process.env.PORT || 3001 //process.env.port is used for deploying in Heroku
 
 
@@ -18,8 +24,9 @@ const PORT = process.env.PORT || 3001 //process.env.port is used for deploying i
 
 
 
+// Body Parser Middlewares
 
-//Middlewares
+
 app.use(bodyParser.urlencoded({
     extended: false
 }))
@@ -27,7 +34,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 
+//Passport middleware
+app.use(passport.initialize());
 
+//passport config
+require('./config/passport')(passport);
+
+//Routes 
+app.use('/routes/users' , users)
 
 
 //API Endpoints

@@ -8,7 +8,7 @@ const keys = require("../db/connect");
 
 const validateRegisterInput = require("../validation/register");
 
-const validateRegisterInput = require("../validation/login");
+const validateLoginInput = require("../validation/login");
 
 // Load User model
 
