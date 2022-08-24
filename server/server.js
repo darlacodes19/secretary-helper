@@ -1,15 +1,17 @@
 const express = require('express');
-const mongoose = require('mongoose')
-const dbConnection = require('./db/connect')
-const cors = require("cors")
+const mongoose = require('mongoose');
+const dbConnection = require('./db/connect');
+const cors = require("cors");
+const bodyParser = require('body-parser')
 
 
 
+//DB config
 dbConnection()
 
 //APP config 
 const app = express();
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3001 //process.env.port is used for deploying in Heroku
 
 
 
@@ -18,8 +20,15 @@ const PORT = process.env.PORT || 3001
 
 
 //Middlewares
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
 
-//DB config
+app.use(bodyParser.json())
+
+
+
+
 
 //API Endpoints
 
@@ -28,4 +37,4 @@ app.get('/', (req, res) => {
 })
 
 //Listner 
-app.listen(PORT, () => console.log(`listening on port: ${PORT}`))
+app.listen(PORT, () => console.log(` I'm listening on port: ${PORT}`))
