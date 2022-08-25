@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const passport = require('passport');
 const users = require('./routes/users')
 const all = require('./routes/allRoutes')
+const {errorHandler} = require('./middleware/errorMiddleware')
 
 
 
@@ -43,6 +44,8 @@ app.use('/routes/users' , users)
 
 app.use(`/routes` , all)
 
+
+app.use(errorHandler)
 
 //API Endpoints
 
