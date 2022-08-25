@@ -5,6 +5,7 @@ const cors = require("cors");
 const bodyParser = require('body-parser')
 const passport = require('passport');
 const users = require('./routes/users')
+const all = require('./routes/allRoutes')
 
 
 
@@ -15,14 +16,7 @@ dbConnection()
 const app = express();
 
 
-
-
 const PORT = process.env.PORT || 3001 //process.env.port is used for deploying in Heroku
-
-
-
-
-
 
 // Body Parser Middlewares
 
@@ -41,7 +35,13 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 //Routes 
+
+// http://localhost:3001/routes/users
 app.use('/routes/users' , users)
+
+// http://localhost:3001/routes/
+
+app.use(`/routes` , all)
 
 
 //API Endpoints
