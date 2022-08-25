@@ -10,7 +10,7 @@ function SignUp () {
     async function registerUser(event) {
         event.preventDefault()
        await axios('http://localhost:3001/register' ,{
-            method: 'POST'
+            method: 'POST',
             headers: {
                 'Contet-Type': 'application/json'
 
@@ -29,7 +29,7 @@ function SignUp () {
 
     return (
 
-        const
+        
         <div> 
             <h1> Creat an Account</h1>
             <form onSubit ={registerUser}> 
