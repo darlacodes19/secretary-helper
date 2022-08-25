@@ -27,7 +27,7 @@ router.route('/projects/:id').delete(projects.deleteProject).put(projects.update
 //Members 
 
     //GET && POST 
-router.route('/members').get(members.getMember).post(members.createMember)
+router.route('/members').get(members.getMembers).post(members.createMember)
     //DELETE, PUT, GET by id 
 router.route('/members/:id').delete(members.deleteMember).put(members.updateMember).get(members.getOneMember)
 
