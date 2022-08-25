@@ -5,16 +5,32 @@ const projectTask = require('../db/models/projectTask');
 //@route GET 
 //@access Private
 
-const getAllProjectTasks= (req, res) => {
+const getAllProjectTasks = async (req, res) => {
+    try{
+        const task = await projectTask.find()
+        return res.status(200).json({task})
 
+     }catch(error) {
+        return res.status(500).send(error.message);
+     }
 }
 
 //@desc get a specific project tasks 
 //@route GET 
 //@access Private
 
-const getOneProjectTask= (req, res) => {
+const getOneProjectTask = async(req, res) => {
+    try {
+        const {id} = req.params;
+        const task = await projectTask.findById(id)
+        if(task){
+            return res.status(200).json({task})
+        } return res.status(404).sned('Task not found')
+        
 
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
 }
 
 
@@ -23,7 +39,17 @@ const getOneProjectTask= (req, res) => {
 //@access Private
 
 const createProjectTask = async (req, res) => {
-    
+    try{
+
+        const task = new projectTask(req.body)
+        await task.save()
+        return res.status(201).json({
+            task,
+        })
+
+    }catch(error) {
+        return res.status(500).json({error:error.message})
+    }
 }
 
 
@@ -32,7 +58,17 @@ const createProjectTask = async (req, res) => {
 //@access Private
 
 const deleteProjectTask = async (req, res) => {
-  
+    try {
+        const {id} = req.params
+        const deleted = await projectTask.findByIdAndDelete(id)
+        if(deleted){
+            return res.status(200).send('Task deleted')
+        }
+        throw new error ('Task not found')
+    
+      }catch(error){
+        return res.status(500).send(error.message)
+      }
 }
 
 //@desc edit member information  (UPDATE)
@@ -40,6 +76,21 @@ const deleteProjectTask = async (req, res) => {
 //@access Private
 
 const updateProjectTask = (req, res) => {
+
+    try{
+
+        const {id} = req.params;
+        projectTask.findByIdAndUpdate(id, req.body, {new: true}, {err, projectTask})
+
+        if(error) {
+            res.status(500).sned(err)
+        }
+        if (!projectTask) {
+            res.status(500).send('Task not found')
+        }
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
 
 }
 

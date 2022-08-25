@@ -5,16 +5,34 @@ const toDoList = require('../db/models/todo');
 //@route GET router/toDo
 //@access Private
 
-const getToDo = (req, res) => {
+const getToDo = async (req, res) => {
+        try {
 
+            const items = await toDoList.find()
+            return res.status(200).json({items})
+            
+        }catch(error){
+            return res.status(500).send(error.message)
+        }
 }
 
 //@desc get a specifict do-do list item 
 //@route GET router/toDo
 //@access Private
 
-const getOneToDo= (req, res) => {
+const getOneToDo = async (req, res) => {
 
+    try {
+        const {id} = req.params;
+        const item = await toDoList.findById()
+        if(item){
+            return res.status(200).json({item})
+        }
+        return res.status(404).sned('To do list item not found')
+
+    }catch(error){
+        return res.status(500).send(error.message)
+    }
 }
 
 
@@ -24,7 +42,7 @@ const getOneToDo= (req, res) => {
 
 const createTodo = async (req, res) => {
     try {
-        const toDo = await new toDoList(req.body)
+        const toDo = new toDoList(req.body)
 
         await toDo.save()
         return res.status(201).json({toDo})
@@ -42,8 +60,12 @@ const deleteToDo = async (req, res) => {
     try {
         const {id} = req.params;
         const deletedItem = await toDoList.findByIdAndDelete(id) 
+        if(deletedItem) {
+            return res.status(200).send("Item deleted")
+        }
     }catch(error) {
 
+        return res.status(500).send(error.message)
     }
 }
 
@@ -53,6 +75,15 @@ const deleteToDo = async (req, res) => {
 
 const updateToDo = (req, res) => {
 
+    try {
+        const {id} = req.params
+        toDoList.findByIdAndUpdate(id, req.body, {new: true}, {err, item})
+        if (error) {
+            res.status(500).send(err)
+        }
+    }catch(error) {
+        return res.status(500).send(error.message)
+    }
 }
 
 
