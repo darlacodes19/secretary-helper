@@ -8,7 +8,7 @@ const MemberSchema = new Schema ( {
     },
     lastName: {
         type: String, 
-        required: true,
+        required: [true, 'Please add a name']
     },
     address: {
         type: String,
