@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const {Schema } = mongoose;
+const Schema  = mongoose.Schema;
 
-const MemberSchema = new mongoose.Schema ( {
+const MemberSchema = new Schema ( {
     firstName: {
         type: String,
         requried: true,
@@ -25,4 +25,4 @@ const MemberSchema = new mongoose.Schema ( {
 }, {timestamps: true},
 )
 
-module.exports('Members', MemberSchema)
+module.exports = mongoose.model('Members', MemberSchema)
