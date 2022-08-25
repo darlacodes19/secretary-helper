@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
-const {Schema } = mongoose;
+const Schema  = mongoose.Schema;
 
-const TodoListSchema = new mongoose.Schema ( {
+const TodoListSchema = new Schema ( 
+    {
     task: {
         type: String,
         requried: true,
@@ -18,7 +19,8 @@ const TodoListSchema = new mongoose.Schema ( {
         type: Boolean,
         default: false,
     }
-}, {timestamps: true},
+}, 
+{timestamps: true},
 )
 
 //export the module I just created

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const {Schema } = mongoose;
+const Schema  = mongoose.Schema;
 
-const TaskCard = new mongoose.Schema ( {
+const TaskCard = new Schema ( {
     title: {
         type: String,
         required: true,
@@ -10,7 +10,8 @@ const TaskCard = new mongoose.Schema ( {
         type: String,
         required:true,
     },
-    {timestamps: ture}
-})
+    
+}, {timestamps: true}
+)
 
 module.exports = mongoose.model('card', TaskCard)

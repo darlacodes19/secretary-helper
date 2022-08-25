@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../db/connect");
+const keys = require("../config/keys");
+
+// http://localhost:3001/routes/users/register
 
 //Load input validation 
 
 const validateRegisterInput = require("../validation/register");
-
 const validateLoginInput = require("../validation/login");
 
 // Load User model
@@ -107,7 +108,7 @@ router.post('/login', (req,res) => {
                 (err, token) => {
                     res.json( {
                         success: true,
-                        token: "Bearer" + token
+                        token: 'Bearer' + token
                     });
                 }
             );
