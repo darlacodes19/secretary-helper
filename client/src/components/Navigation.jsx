@@ -1,10 +1,19 @@
+import { NavLink } from 'react-router-dom'
+import Logo from './Logo'
 const Navigation = () => {
     return (
         <div className="landing-page-header">
             <ul className= 'nav-links'>
-                <li className="nav-item"> Logo </li>
-                <li className="nav-item"> <a href='#'>  Sign In </a> </li> 
-                <li className="nav-item"> <button className="nav-button"> Sign Up </button> </li> 
+                
+                <Logo />
+               
+               <NavLink to={'/login'} className="nav-item">
+                <li>   Sign In  </li> 
+                </NavLink>
+            
+               <NavLink to={'/register'} className="nav-item"> 
+                <li > <button className="nav-button"> Sign Up </button> </li> 
+                </NavLink>
             </ul>
         </div>
     )
