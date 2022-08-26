@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+    background-color: #f2f2f0;
+
+}
+
+
+.nav-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item{
+    list-style: none;
+    margin-right: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+
+}
+
+.nav-item a {
+    text-decoration: none;
+    color:black;
+}
+
+.nav-item a:hover{
+    color:#30526a;
+}
+
+.nav-item:first-child{
+    margin-right: auto;
+}
+
+.nav-button {
+    background-color: #54bec7;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    width:115px;
+}
+
+.nav-button:hover{
+    cursor: pointer;
+    background-color: #30526a;
+}
+
+.landing-page-header {
+    margin-top: 40px;
+}
+
+/* landing page */
+
+.landing-image{
+    width: 700px;
+}
+
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#words{
+    margin-left: 100px;
+    
+}
+
+.main-title{
+    font-family: 'Ibarra Real Nova', serif;
+    font-size: 90px;
+}
+
+
+.landing-info{
+
+    font-family: 'DM Sans', sans-serif;
+}
