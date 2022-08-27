@@ -9,6 +9,7 @@ const User = new Schema ({
   email: {
     type: String,
     required: true,
+    unique: true,
   },
   churchName: {
     type: String,
@@ -25,5 +26,6 @@ const User = new Schema ({
     required: false,
   },
   
-});
+}, {timestamps: true}
+);
 module.exports = mongoose.model("users", User);

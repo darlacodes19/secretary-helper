@@ -4,12 +4,14 @@ const toDo = require('../controllers/toDoControllers');
 const members = require('../controllers/memberControllers');
 const projects = require('../controllers/projectBoardControllers')
 const projectTask = require('../controllers/projectTaskControllers')
+const passport = require('passport');
 
 
+const protect = passport.authenticate('jwt', {session: false})
 //TO-DO LIST ROUTES 
 
     //GET && POST
-router.route('/toDo').get(toDo.getToDo).post(toDo.createTodo)
+router.route('/toDo').get( protect,toDo.getToDo).post(toDo.createTodo)
     //DELETE, PUT
 router.route('/toDo/:id').delete(toDo.deleteToDo).put(toDo.updateToDo)
 

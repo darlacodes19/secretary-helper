@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../config/keys");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const keys = require('../config/keys');
+const passport = require('passport')
+const {protect} = require('../middleware/authMiddleware')
 
 // http://localhost:3001/routes/users/register
 
@@ -15,6 +17,7 @@ const validateLoginInput = require("../validation/login");
 
 const User = require('../db/models/User');
 const register = require('../validation/register');
+const { secretOrKey } = require('../config/keys');
 
 // Create Register endpoint 
 
@@ -54,7 +57,7 @@ router.post('/register', (req, res) => {
                     newUser.password = hash;
                     newUser
                     .save()
-                    .then(user => res.json(user))
+                    .then(user => res.json({user , token: generateToken(user._id) }))
                     .catch(err => console.log(err));
                 });
             });
@@ -62,7 +65,7 @@ router.post('/register', (req, res) => {
     });
 });
 
-
+//@desc Login
 router.post('/login', (req,res) => {
     //form validation 
 
@@ -97,7 +100,7 @@ router.post('/login', (req,res) => {
                     name: user.name
                 };
 
-            //Sign token
+            //Sign token - generate Token for login 
 
             jwt.sign(
                 payload,
@@ -108,7 +111,7 @@ router.post('/login', (req,res) => {
                 (err, token) => {
                     res.json( {
                         success: true,
-                        token: 'Bearer' + token
+                        token: 'Bearer' + ' ' + token
                     });
                 }
             );
@@ -123,4 +126,21 @@ router.post('/login', (req,res) => {
 
 });
 
+//@desc Get user data 
+//@route Get /routes/users/me
+//@access Private
+
+
+router.get('/me', passport.authenticate('jwt', { session: false }),
+    function(req, res) {
+        res.send(req.user);
+    }
+);
+//Generate a JWT for registration 
+
+const generateToken = (id) => {
+    return jwt.sign ({id} , secretOrKey , {
+        expiresIn: 31556926 // 1 year in seconds
+    })
+}
 module.exports = router;

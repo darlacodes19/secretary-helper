@@ -1,19 +1,24 @@
 // to-do list CRUD
 const toDoList = require('../db/models/todo');
+const passport = require('passport')
+const {protect} = require('../middleware/authMiddleware')
 
 //@desc get all to-do list items 
 //@route GET router/toDo
 //@access Private
 
 const getToDo = async (req, res) => {
+
+    
         try {
 
-            const items = await toDoList.find()
+            const items = await toDoList.find( {user: req.user.id})
             return res.status(200).json({items})
             
         }catch(error){
             return res.status(500).send(error.message)
         }
+    
 }
 
 //@desc get a specifict do-do list item 
@@ -42,7 +47,7 @@ const getOneToDo = async (req, res) => {
 
 const createTodo = async (req, res) => {
     try {
-        const toDo = new toDoList(req.body)
+        const toDo = new toDoList({text: req.body , user:req.user})
 
         await toDo.save()
         return res.status(201).json({toDo})
