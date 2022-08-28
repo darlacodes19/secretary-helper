@@ -96,19 +96,63 @@ html{
     font-family: 'DM Sans', sans-serif;
 }
 
+.toggle-button {
+    position: absolute;
+    top: 2.7rem;
+    right: 4rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
 
-@media screen and( min-width: 667px) {
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color:black;
+    border-radius: 10px;
+}
 
+@media screen and ( max-width: 375px) {
+    #words {
+        margin-left: 2rem;
+        margin-top: 10px;
+        text-align: center;
+    }
 
     .main-title {
-        font-size: 20px;
+        font-size: 40px;
+        margin-top: 8rem;
+        
     }
 
     .landing-image {
         
-        width: 100px;
+        width: 350px;
+        position: absolute;
+        left: 1rem;
+        top: 20rem;
+        margin-top: 2rem;
     }
 
+    .demo-button {
+        margin-top: 10px;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    #sign-in-link {
+        display: none;
+    }
+
+   
 }
 
 
