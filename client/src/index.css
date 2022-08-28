@@ -21,7 +21,7 @@ html{
     list-style: none;
     margin-right: 2rem;
     font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     text-decoration: none;
     color:black;
 
@@ -40,10 +40,11 @@ html{
 .nav-button {
     background-color: #54bec7;
     font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     border: none;
-    padding: 10px;
-    width:115px;
+    padding: 0.62rem;
+    width:7.2rem;
+    margin-right: 2rem;
 }
 
 .nav-button:hover{
@@ -53,13 +54,24 @@ html{
 }
 
 .landing-page-header {
-    margin-top: 40px;
+    margin-top: 2.5rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header button {
+    margin-right: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 /* landing page */
 
 .landing-image{
-    width: 700px;
+    width: 49rem;
+    margin-right: 2rem;
 }
 
 .main-section {
@@ -69,13 +81,13 @@ html{
 }
 
 #words{
-    margin-left: 100px;
+    margin-left: 8rem;
     
 }
 
 .main-title{
     font-family: 'Ibarra Real Nova', serif;
-    font-size: 90px;
+    font-size: 5.6rem;
 }
 
 
@@ -84,18 +96,19 @@ html{
     font-family: 'DM Sans', sans-serif;
 }
 
-/* Registration-Page */
 
-.form-content-right{
-    background-color: #30526a;
-    border-radius: 5%;
-    padding: 10px;
-    width: 600px;
-    height: 70vh;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+@media screen and( min-width: 667px) {
+
+
+    .main-title {
+        font-size: 20px;
+    }
+
+    .landing-image {
+        
+        width: 100px;
+    }
+
 }
+
+
