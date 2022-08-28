@@ -1,0 +1,131 @@
+/* Shared */
+
+.form-content-right{
+    background-color: #54bec7;
+    padding: 10px;
+    width: 400px;
+    height: 80vh;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 3%;
+
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    height: 76vh;
+    background-color: white;
+    border-radius: 3%;
+
+    
+}
+
+.form-input {
+    margin: 10px;
+    height: 30px;
+    text-indent: 5px;
+    width: 250px;
+}
+
+.form-inputs {
+    display: flex;
+    align-items: center;
+ 
+}
+
+.form-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 30px;
+   
+}
+
+.form-button{
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    padding: 10px;
+    width:150px;
+    background-color: #54bec7;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.form-button:hover {
+    background-color: #f25044;
+    color:whitesmoke;
+    cursor: pointer;
+  
+}
+
+.form-button:active {
+    transform: translate3d(0, 2px, 0);
+}
+
+
+
+
+
+
+/* signup */
+
+.form {
+    margin-top: 20px;
+}
+
+/* signIn */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    
+
+}
+
+.form-content-left {
+    border: 2px  black;
+    border-style: solid  none solid   solid;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f3d0d2;
+}
+
+.form-right{
+    width: 450px;
+
+   
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    height: 76vh;
+    background-color: white;
+    
+}
+
+.form-image {
+    width: 560px;
+  
+}
+
+#welcome-message {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 30px;
+
+}
+

@@ -1,0 +1,56 @@
+
+.material-symbols-outlined {
+  margin-right: 10px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+.dashboard-sidebar-items {
+    display: flex;
+    align-items: center;
+    margin: 40px;
+}
+
+.dashboard-sidebar-items li {
+    list-style: none;
+}
+
+.dashboard-sidebar {
+    border: 2px black;
+    border-top-left-radius:25px;
+    border-bottom-left-radius: 25px;
+    border-style: solid  none solid   solid;
+    width: 200px;
+    height: 500px;
+    position: absolute;
+    top: 90px;
+    left: 150px;
+
+    background-color: #54bec7;
+}
+
+.dashboard-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-main-section {
+    border: 2px solid black;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    height:500px;
+    width: 800px;
+
+    position: absolute;
+    top: 90px;
+    left: 350px;
+    background-color: wheat;
+
+  
+}
+
