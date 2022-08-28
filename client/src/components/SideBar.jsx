@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/dashboard.css'
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -23,7 +24,7 @@ function SideBar() {
             </div> 
             <div className='dashboard-sidebar-items'> 
                 <span class="material-symbols-outlined"> groups </span>
-                <li>  Members </li>
+                <NavLink to ={'/members'} ><li>  Members </li> </NavLink> 
             </div>
             <div className='dashboard-sidebar-items'> 
                 <span class="material-symbols-outlined"> calendar_month </span>
