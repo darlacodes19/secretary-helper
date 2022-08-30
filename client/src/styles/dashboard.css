@@ -34,7 +34,7 @@
     top: 90px;
     left: 150px;
 
-    background-color: #54bec7;
+    background-color:whitesmoke;
 }
 
 .dashboard-items-container {
@@ -55,7 +55,7 @@
     position: absolute;
     top: 90px;
     left: 350px;
-    background-color: wheat;
+    background-color:whitesmoke;
 
   
 }
@@ -99,6 +99,67 @@ table, th, td {
     margin-bottom: 50px;
   }
 
+  /* To-Do */
+
+  .to-do-container {
+    border: 2px solid black;
+    border-radius: 3%;
+    width: 300px;
+    height: 400px;
+
+    margin-top: 20px;
+    margin-left: 470px;
+
+    background-color: white;
+  }
+
+
+.to-do-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.add-task-button {
+    margin-left: 100px;
+    background-color: white;
+    padding: 5px;
+    background-color: #54bec7;
+}
+
+.add-task-button:hover {
+    background-color: #f25044;
+    color:whitesmoke;
+    cursor: pointer;
+}
+
+.add-task-button:active {
+    transform: translate3d(0, 2px, 0);
+}
+
+
+  .to-do-list-card{
+    /* border: 2px solid black; */
+    width:290px;
+    padding: 10px;
+    border-bottom: 2px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+    background-color: white;
+  }
+
+  .to-do-info{
+    display: flex;
+    justify-content: space-between;
+    
+
+  }
+
+ 
 
  
 
