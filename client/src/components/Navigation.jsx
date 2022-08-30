@@ -6,8 +6,14 @@ const Navigation = () => {
             <ul className= 'nav-links'>
                 
                 <Logo />
+
+                <a href='#' className='toggle-button' > 
+                <span className='bar'> </span>
+                <span className='bar'> </span>
+                <span className='bar'> </span>
+                </a>
                
-               <NavLink to={'/login'} className="nav-item">
+               <NavLink to={'/login'} className="nav-item" id = "sign-in-link">
                 <li>   Sign In  </li> 
                 </NavLink>
             
