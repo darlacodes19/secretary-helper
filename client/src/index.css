@@ -114,6 +114,15 @@ html{
     border-radius: 10px;
 }
 
+
+/* Footer  */
+
+.footer {
+    height: 20px;
+    background-color: purple;
+    margin-bottom: 0;
+}
+
 @media screen and ( max-width: 375px) {
     #words {
         margin-left: 2rem;
@@ -154,5 +163,7 @@ html{
 
    
 }
+
+
 
 
