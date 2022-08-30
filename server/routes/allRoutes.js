@@ -5,13 +5,14 @@ const members = require('../controllers/memberControllers');
 const projects = require('../controllers/projectBoardControllers')
 const projectTask = require('../controllers/projectTaskControllers')
 const passport = require('passport');
+const cors = require('cors')
 
 
 const protect = passport.authenticate('jwt', {session: false})
 //TO-DO LIST ROUTES 
 
     //GET && POST
-router.route('/toDo').get( protect,toDo.getToDo).post(toDo.createTodo)
+router.route('/toDo').get(toDo.getToDo).post(toDo.createTodo)
     //DELETE, PUT
 router.route('/toDo/:id').delete(toDo.deleteToDo).put(toDo.updateToDo)
 
@@ -29,9 +30,9 @@ router.route('/projects/:id').delete(projects.deleteProject).put(projects.update
 //Members 
 
     //GET && POST 
-router.route('/members').get(members.getMembers).post(members.createMember)
+router.route('/members' , cors()).get(members.getMembers).post(members.createMember)
     //DELETE, PUT, GET by id 
-router.route('/members/:id').delete(members.deleteMember).put(members.updateMember).get(members.getOneMember)
+router.route('/members/:id' , cors()).delete(members.deleteMember).put(members.updateMember).get(members.getOneMember)
 
 //Project Tasks 
 
