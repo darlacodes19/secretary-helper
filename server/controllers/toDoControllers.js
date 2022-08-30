@@ -1,5 +1,5 @@
 // to-do list CRUD
-const toDoList = require('../db/models/todo');
+const TodoLists = require('../db/models/todo');
 const passport = require('passport')
 const {protect} = require('../middleware/authMiddleware')
 
@@ -9,10 +9,11 @@ const {protect} = require('../middleware/authMiddleware')
 
 const getToDo = async (req, res) => {
 
-    
+    //for protecting routes 
+    // {user: req.user.id}
         try {
 
-            const items = await toDoList.find( {user: req.user.id})
+            const items = await TodoLists.find( )
             return res.status(200).json({items})
             
         }catch(error){
