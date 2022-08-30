@@ -1,4 +1,8 @@
 
+* {
+    margin: 0; 
+}
+
 .material-symbols-outlined {
   margin-right: 10px;
   font-variation-settings:
@@ -39,6 +43,8 @@
     justify-content: space-between;
 }
 
+/* shared */
+
 .dashboard-main-section {
     border: 2px solid black;
     border-bottom-right-radius: 25px;
@@ -53,4 +59,50 @@
 
   
 }
+
+
+/* Members */
+
+.add-member-button {
+    position: absolute;
+    right: 50px;
+}
+
+.add-member-form {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    position: absolute;
+    right:50px;
+    top: 70px;
+}
+
+table, th, td {
+    border: 1px solid;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  
+
+  td {
+   width: 10%;
+   padding: 8px; 
+  }
+
+  .members-search {
+    
+    left: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+
+ 
+
+ 
+
+
 
