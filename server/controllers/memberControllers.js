@@ -24,7 +24,7 @@ const getOneMember = async (req, res) => {
     try{
 
         const {id} = req.params;
-        const member =  await Item.findById(id)
+        const member =  await Member.findById(id)
         if(member){
             return res.status(200).json({member})
         }
@@ -60,7 +60,7 @@ const deleteMember = async (req, res) => {
   try{
 
     const {id} = req.params;
-    const deleted = await Item.findByIdAndDelete(id)
+    const deleted = await Member.findByIdAndDelete(id)
     if (deleted) {
         return res.status(200).send('Member deleted')
     }
