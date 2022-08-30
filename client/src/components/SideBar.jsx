@@ -11,23 +11,23 @@ function SideBar() {
 
         <ul> 
             <div className='dashboard-sidebar-items'> 
-                <span class="material-symbols-outlined"> account_circle </span>
+                <span className="material-symbols-outlined"> account_circle </span>
                 <li>  Profile </li>
             </div> 
             <div className='dashboard-sidebar-items'> 
-                <span class="material-symbols-outlined"> dashboard</span>
-                <li>  Dashboard </li>
+                <span className="material-symbols-outlined"> dashboard</span>
+                <NavLink to ={'/dashboard'} > <li>  Dashboard </li> </NavLink>
             </div> 
             <div className='dashboard-sidebar-items'> 
-                <span class="material-symbols-outlined"> folder_open </span>
+                <span className="material-symbols-outlined"> folder_open </span>
                 <li> Projects</li>
             </div> 
             <div className='dashboard-sidebar-items'> 
-                <span class="material-symbols-outlined"> groups </span>
+                <span className="material-symbols-outlined"> groups </span>
                 <NavLink to ={'/members'} ><li>  Members </li> </NavLink> 
             </div>
             <div className='dashboard-sidebar-items'> 
-                <span class="material-symbols-outlined"> calendar_month </span>
+                <span className="material-symbols-outlined"> calendar_month </span>
                 <li> Calender  </li>
             </div> 
         </ul>
