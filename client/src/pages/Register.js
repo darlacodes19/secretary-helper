@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import FormSuccess from '../components/FormSuccess'
 import RegistrationForm from '../components/RegistrationForm'
+import '../styles/form.css'
+
 
 function Register () {
 
