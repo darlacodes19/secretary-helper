@@ -47,9 +47,9 @@ Client Side:
 One of the biggest challanges of this project was creating authentication, espceially protecting the routes. I got this to funciotn on the backend, but still have to work on the FrontEnd. 
 
 # MVP 
-Create a user dasboard so that users add and delete items from a to-do list 
-Let users manage their maembers list 
+*Create a user dasboard so that users add and delete items from a to-do list 
+*Let users manage their maembers list 
 
 # Post MVP
-Finish implementing user authenitcation
-Add Kanban board to projects 
+*Finish implementing user authenitcation
+*Add Kanban board to projects 
