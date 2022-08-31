@@ -79,7 +79,7 @@ const updateMember = (req, res) => {
         Member.findByIdAndUpdate(id, req.body, {new: true}, {err, Member})
 
         if (error) {
-            res.status(500).send(err)
+            res.status(500).send(error)
         }
         if(!item) {
             res.status(500).send('Member not found')

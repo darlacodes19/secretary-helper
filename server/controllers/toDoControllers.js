@@ -87,7 +87,7 @@ const updateToDo = (req, res) => {
         const {id} = req.params
         TodoLists.findByIdAndUpdate(id, req.body, {new: true}, {err, item})
         if (error) {
-            res.status(500).send(err)
+            res.status(500).send(error)
         }
     }catch(error) {
         return res.status(500).send(error.message)

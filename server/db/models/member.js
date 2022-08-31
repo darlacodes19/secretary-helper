@@ -14,7 +14,7 @@ const MemberSchema = new Schema ( {
     },
     lastName: {
         type: String, 
-        required: [true, 'Please add a name']
+        required: true,
     },
     address: {
         type: String,
