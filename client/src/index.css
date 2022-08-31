@@ -10,6 +10,14 @@ html{
 
 }
 
+.logo{
+    margin-left: 50px;
+}
+
+.logo:hover {
+    opacity: .5;
+}
+
 
 .nav-links{
     display: flex;
@@ -54,7 +62,7 @@ html{
 }
 
 .landing-page-header {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
 }
 
 .header {
@@ -94,11 +102,25 @@ html{
 .landing-info{
 
     font-family: 'DM Sans', sans-serif;
+    
 }
 
+.demo-button {
+    background-color: #f25044;
+    border: none;
+    padding: 10px;
+
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.demo-button:hover {
+    background-color: #f9d291;
+}
 .toggle-button {
     position: absolute;
-    top: 2.7rem;
+    top: 4rem;
     right: 4rem;
     display: none;
     flex-direction: column;
@@ -124,9 +146,13 @@ html{
 }
 
 @media screen and ( max-width: 375px) {
+
+    .logo{
+      margin-right: 180px;
+    }
     #words {
         margin-left: 2rem;
-        margin-top: 10px;
+        margin-top: 20px;
         text-align: center;
     }
 
@@ -140,8 +166,8 @@ html{
         
         width: 350px;
         position: absolute;
-        left: 1rem;
-        top: 20rem;
+        left: .5rem;
+        top: 26rem;
         margin-top: 2rem;
     }
 
