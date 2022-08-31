@@ -3,12 +3,7 @@ const Schema  = mongoose.Schema;
 
 const TodoListSchema = new Schema ( 
     {
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref: 'users'
-
-    },
+    
     task: {
         type: String,
         requried: true,
