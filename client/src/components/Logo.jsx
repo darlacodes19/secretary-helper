@@ -3,7 +3,7 @@ const Logo = () => {
     return (
         <div className="nav-item">
              <NavLink to={'/'} > 
-                <li> Logo </li>
+             <img src= {require('../assets/Logo.png')} width='200px' className="logo"/>
                 </NavLink>
         </div> 
     )
