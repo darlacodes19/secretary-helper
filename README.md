@@ -10,7 +10,7 @@ A full stack web application using the MERN stack technologies that allows samll
 
 # Wireframe
 
-
+![alt text](client/src/assets/wireframe.jpg)
 
 
 
