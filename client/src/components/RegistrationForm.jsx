@@ -26,20 +26,22 @@ const RegistrationForm = ({submitForm}) => {
                   value={values.name}
                   onChange={handleChange}
                   /> 
-                  {errors.name && <p> {errors.name}</p>}
+                  
         </div>
+        {errors.name && <p className='form-error-message'> {errors.name}</p>}
         <div className="form-inputs">
           <span class="material-symbols-outlined"> church </span>
               <input 
                   type="text" 
-                  name="church name" 
+                  name="churchName" 
                   className='form-input'
                   placeholder='Church Name'
                   value={values.churchName}
                   onChange={handleChange}
                   /> 
-                    {errors.churchName && <p> {errors.churchName}</p>}
+                    
         </div>
+        {errors.churchName && <p className='form-error-message'> {errors.churchName}</p>}
         <div className="form-inputs">
           <span class="material-symbols-outlined"> mail </span>
               <input 
@@ -50,8 +52,9 @@ const RegistrationForm = ({submitForm}) => {
                   value={values.email}
                   onChange={handleChange}
                   /> 
-                    {errors.email && <p> {errors.email}</p>}
+                   
         </div>
+        {errors.email && <p className='form-error-message'> {errors.email}</p>}
         <div className="form-inputs">
           <span class="material-symbols-outlined"> lock </span>
               <input 
@@ -62,20 +65,23 @@ const RegistrationForm = ({submitForm}) => {
                   value={values.password}
                   onChange={handleChange}
                   /> 
-                    {errors.password && <p> {errors.password}</p>}
+                    
         </div>
+
+        {errors.password && <p className='form-error-message'> {errors.password}</p>}
         <div className="form-inputs">
         <span class="material-symbols-outlined"> lock </span>
               <input 
-                  type="password2" 
+                  type="password" 
                   name="password2" 
                   className='form-input'
                   placeholder='Confirm Password'
                   value={values.password2}
                   onChange={handleChange}
                   /> 
-                    {errors.password2 && <p> {errors.password2}</p>}
+                   
         </div>
+        {errors.password2 && <p className='form-error-message'> {errors.password2}</p>}
         </div>
         <button className="form-button" type='submit'> SignUp </button>
       </form>  
