@@ -12,7 +12,7 @@ dotenv.config( {path: 'config.env'})
 //3-use a then.catch block to show if the connection was successful or not 
 
 async function dbConnection() {
-mongoose.connect(process.env.DB_URL, {useNewUrlParser:true, useUnifiedTopology: true,}).then( () => {
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true,}).then( () => {
     console.log('Successfully connected to MongoDB Atlas')
 }).catch( (error) => {
     console.log('Unable to connect to MongoDB Atlas');
