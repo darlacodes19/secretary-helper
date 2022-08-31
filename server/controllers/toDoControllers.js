@@ -46,16 +46,18 @@ const getOneToDo = async (req, res) => {
 //@route PUT router/toDo
 //@access Private
 
+// user:req.user
 const createTodo = async (req, res) => {
     try {
-        const toDo = new toDoList({text: req.body , user:req.user})
-
+        const toDo = new TodoLists(req.body)
         await toDo.save()
         return res.status(201).json({toDo})
     }catch(error) {
         return res.status(500).json({error: error.message})
     }
 }
+
+
 
 
 //@desc delete a to-do list item 
@@ -65,7 +67,7 @@ const createTodo = async (req, res) => {
 const deleteToDo = async (req, res) => {
     try {
         const {id} = req.params;
-        const deletedItem = await toDoList.findByIdAndDelete(id) 
+        const deletedItem = await TodoLists.findByIdAndDelete(id) 
         if(deletedItem) {
             return res.status(200).send("Item deleted")
         }
@@ -83,7 +85,7 @@ const updateToDo = (req, res) => {
 
     try {
         const {id} = req.params
-        toDoList.findByIdAndUpdate(id, req.body, {new: true}, {err, item})
+        TodoLists.findByIdAndUpdate(id, req.body, {new: true}, {err, item})
         if (error) {
             res.status(500).send(err)
         }
