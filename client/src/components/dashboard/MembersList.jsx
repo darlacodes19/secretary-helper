@@ -37,7 +37,7 @@ export default function MembersList() {
   console.log(members + 'this is members')
 
 
-  //function to add a new member to the database 
+ 
 
   function handleClick() {
        setIsShown(true)
@@ -54,7 +54,7 @@ export default function MembersList() {
          <MembersSearchBar setMember={setMembers} member= {members} setSearchMemebrs = {setSearchMemebrs}/> 
 
             <button className="add-member-button" onClick={handleClick}> Add New Member </button> 
-            {isShown && <MemberForm setIsShown = {setIsShown} setMembers = {setMembers}/> }
+            {isShown && <MemberForm setIsShown = {setIsShown} setMembers = {setMembers} fetch = {fetchData}/> }
         
             {/* <table> 
                 <th> First Name </th> 
