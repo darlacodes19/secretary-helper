@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import FormSuccess from '../components/FormSuccess'
 import RegistrationForm from '../components/RegistrationForm'
+import Logo from '../components/Logo'
 import '../styles/form.css'
 
 
@@ -41,6 +42,7 @@ function Register () {
 
     return (
         <div>
+            <Logo /> 
 
            {!isSubmitted ? (<RegistrationForm submitForm={submitForm}/>) : (<FormSuccess />)}
         
