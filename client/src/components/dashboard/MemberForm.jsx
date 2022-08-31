@@ -12,7 +12,7 @@ export default function MemberForm(props) {
         address: '',
     })
 
-    //logic to create a new user 
+    //logic to create a new member
     const [createdMember, setCreatedMember] = useState(null)
 
     const handleChange = (event) => {
@@ -30,11 +30,12 @@ export default function MemberForm(props) {
         url: 'http://localhost:3001/routes/members',
         method: 'POST',
         data: member
-    }).then(res => setCreatedMember(res.data.item).catch(console.error))
+    }).then(res => setCreatedMember(res.data.member).catch(console.error))
 
     props.setIsShown(false)
     
 }
+
 
 function cancelButton () {
     props.setIsShown(false)
