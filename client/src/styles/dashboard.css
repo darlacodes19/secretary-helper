@@ -65,7 +65,8 @@
 
 .add-member-button {
     position: absolute;
-    right: 50px;
+    top: 30px;
+    right: 40px;
 }
 
 .add-member-form {
