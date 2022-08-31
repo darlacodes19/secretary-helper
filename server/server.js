@@ -8,18 +8,21 @@ const users = require('./routes/users')
 const all = require('./routes/allRoutes')
 const {errorHandler} = require('./middleware/errorMiddleware')
 
-
+//APP config 
+const app = express();
+app.use(cors())
 
 //DB config
 dbConnection()
 
-//APP config 
-const app = express();
 
 
-const PORT = process.env.PORT || 3001 //process.env.port is used for deploying in Heroku
+
+const PORT = process.env.PORT || 3001 //process.env.port is used for deploying on Heroku
 
 // Body Parser Middlewares
+
+
 
 
 app.use(bodyParser.urlencoded({
@@ -44,12 +47,9 @@ app.use('/routes/users' , users)
 
 app.use(`/routes` , all)
 
-const corsOptions ={
-    origin:'*', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+
+
+
 
 app.use(errorHandler)
 
